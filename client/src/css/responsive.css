@@ -1,0 +1,342 @@
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+@media (min-width: 1281px) and (max-width: 1590px) {
+  
+    .canvasMap1{
+      height: 450px;
+      width: 700px;
+    }
+    .canvasMap{
+      margin-top: 50px;
+      height: 450px;
+      width: 700px;
+    }
+  
+    .homepage h1{
+      margin: 25px 200px;
+      font-size: 2.5rem;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+  @media (min-width: 1306px) and (max-width: 1570px) {
+    
+    .canvasMap1{
+      height: 450px;
+      width: 700px;
+    }
+    .canvasMap{
+      margin-top: 50px;
+      height: 450px;
+      width: 700px;
+    }
+  
+    .homepage h1{
+      margin: 25px 250px;
+      font-size: 2rem;
+    }
+    
+  }
+  
+  @media (min-width: 1025px) and (max-width: 1305px) {
+    
+    .canvasMap1{
+      height: 450px;
+      width: 700px;
+    }
+    .canvasMap{
+      margin-top: 50px;
+      height: 450px;
+      width: 700px;
+    }
+  
+    .homepage h1{
+      margin: 25px 100px;
+      font-size: 2rem;
+    }
+  
+    .rightSection{
+      margin: 30px;
+      height: 400px;
+      width: 150px;
+    }
+  
+    [role="tablist"] {
+      width: 10%;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    
+    .homepage h1{
+      margin: 25px 50px;
+      font-size: 1.5rem;
+    }
+    .rightSection{
+      margin: 5px;
+      margin-right: 20px;
+      margin-top: 30px;
+      height: 400px;
+      width: 150px;
+    }
+    .canvasMap1{
+      height: 400px;
+      width: 538px;
+    }
+    .canvasMap{
+      margin-top: 60px;
+      height: 400px;
+      width: 538px;
+    }
+    .planets{
+      width: 88%;
+    }
+    [role="tablist"] {
+      width: 12%;
+    }
+    .canvasMap2{
+      top: 92px;
+      left: 122px;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+    .homepage h1{
+      margin: 25px auto;
+      font-size: 1.5rem;
+    }
+    .rightSection{
+      margin: 30px;
+      margin-right: 20px;
+      margin-top: 30px;
+      height: 400px;
+      width: 150px;
+    }
+    .content{
+      margin: auto;
+    }
+    .canvasMap1{
+      height: 400px;
+      width: 538px;
+    }
+    .canvasMap{
+      margin-top: 100px;
+      height: 400px;
+      width: 538px;
+    }
+    .planets{
+      width: 88%;
+    }
+    [role="tablist"] {
+      width: 12%;
+    }
+    .canvasMap2{
+      top: 92px;
+      left: 122px;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  @media (min-width: 481px) and (max-width: 767px) {
+    
+    .homepage h1{
+      margin: 5px 10px;
+      font-size: 1.3rem;
+    }
+    .rightSection{
+      margin: 5px;
+      margin-right: 20px;
+      margin-top: 40px;
+      height: 400px;
+      width: 150px;
+      font-size: 0.9rem;
+    }
+    .canvasMap1{
+      height: 240px;
+      width: 340px;
+    }
+    .canvasMap{
+      margin-top: 20px;
+      height: 240px;
+      width: 340px;
+    }
+    .planets{
+      width: 88%;
+    }
+    [role="tablist"] {
+      width: 15%;
+    }
+    [role="tablist"] a, [role="tablist"] button {
+      font-size: 0.8rem;
+  }
+    .canvasMap2{
+      top: 5px;
+      left: 20px;
+    }
+    .rowLegend {
+      margin-top: 5px;
+    }
+    .planetColor {
+      height: 12px;
+      width: 32px;
+    }
+    .parameters button, .parameters label, .parameters input, .parameters p {
+      font-size: 0.7rem;
+      padding: 0;
+    }
+    .parameters button {
+      padding: 4px 15px;
+    }
+    .parameters input{
+      width: 60px;
+      height: 20px;
+    }
+    input[type="date"] {
+      width: 100px;
+    }
+    .details{
+      height: 350px;
+      width: 400px;
+      margin: 8px auto;
+    }
+    .details h2{
+      margin: 4px;
+      font-size: 1rem;
+    }
+    .details h3{
+      margin: 2px;
+      font-size: 0.9rem;
+    }
+    .details h4{
+      font-size: 0.8rem;
+    }
+    .details p{
+      font-size: 0.7rem;
+    }
+    .planetImg {
+      margin: 10px auto;
+      height: 180px;
+      width: 110px;
+    }
+    .saturnImg {
+      width: 190px;
+    }
+  }
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  @media (min-width: 320px) and (max-width: 480px) {
+    
+    .homepage h1{
+      margin: 20px auto;
+      font-size: 1.1rem;
+    }
+    .header .resetBtn{
+      margin: auto 20px;
+    } 
+    .content{
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    .rightSection{
+      margin: 15px auto;
+      height: 200px;
+      width: 150px;
+      font-size: 0.7rem;
+    }
+    .canvasMap1{
+      margin-top: 10px;
+      height: 220px;
+      width: 320px;
+    }
+    .canvasMap{
+      height: 220px;
+      width: 320px;
+    }
+    .planets{
+      width: 82%;
+    }
+    [role="tablist"] {
+      width: 18%;
+    }
+    [role="tablist"] a, [role="tablist"] button {
+      font-size: 0.8rem;
+  }
+    .canvasMap2{
+      top: 10px;
+      left: 10px;
+    }
+    .rowLegend {
+      margin-top: 5px;
+    }
+    .planetColor {
+      height: 12px;
+      width: 32px;
+    }
+    .parameters button, .parameters label, .parameters input, .parameters p {
+      font-size: 0.7rem;
+      padding: 0;
+    }
+    .parameters button {
+      padding: 4px 15px;
+    }
+    .parameters input{
+      width: 60px;
+      height: 20px;
+    }
+    input[type="date"] {
+      width: 100px;
+    }
+    .details{
+      height: 350px;
+      width: 250px;
+      margin: 20px auto;
+    }
+    .details h2{
+      margin: 4px;
+      font-size: 1.3rem;
+    }
+    .details h3{
+      margin: 2px;
+      font-size: 1.2rem;
+    }
+    .details h4{
+      font-size: 1.1rem;
+    }
+    .details p{
+      font-size: 1rem;
+    }
+    .planetImg {
+      margin: 30px auto;
+      height: 150px;
+      width: 150px;
+    }
+    .saturnImg {
+      width: 250px;
+    }
+    
+  }
