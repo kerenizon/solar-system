@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
 
 // mongoose.connect('mongodb://127.0.0.1:27017/solar-system', {
-mongoose.connect('process.env.MONGO_URI', {
+const connection_var = process.env.MONGO_URI;
+mongoose.connect(connection_var, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false
