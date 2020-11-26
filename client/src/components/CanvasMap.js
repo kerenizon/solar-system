@@ -63,10 +63,13 @@ class CanvasMap extends React.Component {
   
     // const data = JSON.parse(localStorage.getItem('data'));
   
-    await api.getAllData().then(data => data = data.details);
+    await api.getAllData().then(res => {
+      let arr = res.data.data;
+      data = arr[arr.length-1].result;
+    });
     
     const createPlanetPoint = (index, planetName, planetColor) => {
-      let planet = this.state.data[index].cells[0].position.horizonal;
+      let planet = data[index].cells[0].position.horizonal;
       let btnsArr = this.props.refs;
 
       document.querySelectorAll('[role="tab"]').forEach(tab => {
@@ -117,8 +120,9 @@ class CanvasMap extends React.Component {
 
 
     
-    if(data !== null){
+    if((data !== null) && (data.length !== 0)){
 
+      this.props.dataLoaded();
       ctxOuter.clearRect(0, 0, outerCanvas.width, outerCanvas.height);
       drawCircle();
 

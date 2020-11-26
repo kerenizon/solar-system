@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const path = require('path');
 const db = require('./db/mongoose');
 
 const dataRouter = require('./routers/data-router');
@@ -14,11 +15,19 @@ app.use(bodyParser.json());
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
+app.use('/api/data', dataRouter);
 
-app.use('/api', dataRouter);
+app.use(express.static(path.join(__dirname, 'build')));
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+
+// app.get('/', (req, res) => {
+//     res.send('check')
+// })
+
+
 
 app.listen(port, () => {
     console.log('Server is up on port ' + port)

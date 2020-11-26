@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const Data = new Schema(
     {
-        details: [{ type: String, required: true }]
+        result: { type: [Object], required: false }
     },
     { timestamps: true },
 )

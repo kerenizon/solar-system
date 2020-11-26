@@ -385,6 +385,91 @@ input.checkbox{
   text-decoration: underline;
 }
 
+/* //////////////////////////////////////////////////////// spinner component ////////////////////////////////////////////////////////////////// */
+
+
+.spin {
+  height: 20px;
+  width: 100px;
+  margin: auto;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.circle {
+  height: 13px;
+  width: 20px;
+  background-color: #64656c;
+  margin: 10%;
+  border-radius: 20px;
+  position: relative;
+}
+.circle::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 20px;
+  background-color: transparent;
+}
+
+.circle_1::before {
+  animation-name: animate2_1;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+.circle_2::before {
+  animation-name: animate2_2;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+.circle_3::before {
+  animation-name: animate2_3;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+
+@keyframes animate2_1 {
+  33% {
+    background-color: var(--primaryColor);
+  }
+  66% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+@keyframes animate2_2 {
+  33% {
+    background-color: transparent;
+  }
+  66% {
+    background-color: var(--primaryColor);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+@keyframes animate2_3 {
+  33% {
+    background-color: transparent;
+  }
+  66% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: var(--primaryColor);
+  }
+}
+
+
 /* ///////////////////////////////////////////////////////// media queries - responsiveness ///////////////////////////////////////////////////////// */
 /* 
   ##Device = Desktops

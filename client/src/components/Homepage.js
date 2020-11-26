@@ -5,6 +5,7 @@ import api from '../api/index'
 import '../css/index.css';
 import CanvasMap from './CanvasMap';
 import ThemeToggler from './ThemeToggler';
+import Spinner from './Spinner';
 
 class Homepage extends React.Component {
   constructor(props){
@@ -12,7 +13,7 @@ class Homepage extends React.Component {
     this.dateRef = React.createRef();
     this.timeRef = React.createRef();
     
-    this.state = {latitude: 0, longitude: 0, status: '',timeSelected: false, dateSelected: false, data: null, counter: 0};
+    this.state = {latitude: 0, longitude: 0, status: '',timeSelected: false, dateSelected: false, data: null, counter: 0, isLoading: false};
   }
 
   setTodayDate = async () => {
@@ -28,7 +29,7 @@ class Homepage extends React.Component {
     const time = `${hours}:${minutes}:${seconds}`;
  
     await this.fetchFromApi(this.state.latitude, this.state.longitude, date, time);
-    this.setState({status:''});
+    this.setState({status:'', isLoading: true});
   }
 
   setDate = async (e) => {
@@ -42,7 +43,7 @@ class Homepage extends React.Component {
 
     if(this.state.timeSelected){
       await this.fetchFromApi(this.state.latitude, this.state.longitude, date, time);
-      this.setState({status:''});
+      this.setState({status:'',isLoading: true});
     } 
   }
 
@@ -59,7 +60,7 @@ class Homepage extends React.Component {
   
     if(this.state.dateSelected && this.state.counter === 1){
       await this.fetchFromApi(this.state.latitude, this.state.longitude, date, time);
-      this.setState({status:'', counter: 0});
+      this.setState({isLoading: true, status:'', counter: 0});
     }
   }
 
@@ -97,10 +98,8 @@ class Homepage extends React.Component {
       }
     });
     const result = response.data.data.table.rows;
-    console.log(response);
-    console.log(result);
     // localStorage.setItem('data', JSON.stringify(result));
-    await api.insertData(result).then(res => {})
+    await api.insertData({"result": result}).then(res => {console.log('insert data successed!')});
   }
 
   geoFindMe = () => {
@@ -129,6 +128,12 @@ class Homepage extends React.Component {
     this.setState({status: `Select date and time or press: 'now'`});
   }
 
+  onLoad = () => {
+    if (this.state.isLoading === true){
+      this.setState({isLoading: false});
+    }
+  }
+
   componentDidMount = async () => {
     this.geoFindMe();
     this.setState({status: `Select date and time or press: 'now'`});
@@ -147,14 +152,15 @@ class Homepage extends React.Component {
         <div className="content">
           <div className="centerSection">
             <div className="parameters">
-              <p className="status">{this.state.status}</p>
+              {!this.state.isLoading && <p className="status">{this.state.status}</p>}
+              {this.state.isLoading && <Spinner/>}
               <button onClick={this.setTodayDate}>now</button> <br/>
               <label>Date:</label>  
               <input type="date" name="date" onChange={this.setDate} ref={this.dateRef}></input> 
               <label>Time:</label>  
               <input type="time" name="time" min="00:00" max="24:00" onChange={this.setTime} ref={this.timeRef}></input> <br/>
             </div>
-            <CanvasMap refs={this.props.refs} dataLoaded={this.state.data} />
+            <CanvasMap refs={this.props.refs} dataLoaded={this.onLoad} />
           </div>
           <div className="rightSection">
             <div className="rowLegend">
