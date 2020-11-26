@@ -32,3 +32,6 @@ app.get('/*', (req, res) => {
 app.listen(port, () => {
     console.log('Server is up on port ' + port)
 })
+
+
+// "start": "concurrently \"cd server && node index.js\" \"cd client && npm start\""
