@@ -35,3 +35,9 @@ app.listen(port, () => {
 
 
 // "start": "concurrently \"cd server && node index.js\" \"cd client && npm start\""
+
+// "scripts": {
+//   "test": "echo \"Error: no test specified\" && exit 1",
+//   "start": "node server/index.js",
+//   "heroku-postbuild": "npm run build"
+// },
